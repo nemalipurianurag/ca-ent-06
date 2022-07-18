@@ -30,7 +30,7 @@ resource "google_project_service_identity" "privateca_sa" {
 
 # Create a KMS key-ring
 resource "google_kms_key_ring" "keyring" {
-  name     = "keyring-example15"
+  name     = "keyring-example35"
   location = "us-central1"
 }
 # # Create a KMS key within the provided KMS key-ring
@@ -101,7 +101,7 @@ resource "google_storage_bucket_iam_member" "cas_bucket_reader" {
 #Create a customer-managed bucket
 resource "google_storage_bucket" "cmek_bucket" {
   project       = "modular-scout-345114"
-  name          = "default215"
+  name          = "default235"
   force_destroy = true
   # encryption {
   #   default_kms_key_name = google_kms_crypto_key.secret.name
@@ -111,7 +111,7 @@ resource "google_storage_bucket" "cmek_bucket" {
 
 #creation of CA pool with teir as Enterprise
 resource "google_privateca_ca_pool" "example_ca_pool_enterprise" {
-  name     = "my-pool15"
+  name     = "my-pool35"
   location = "us-central1"
   tier     = "ENTERPRISE"
 
